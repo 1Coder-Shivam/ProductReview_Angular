@@ -1,0 +1,4 @@
+Assumption Made
+1. filter of product by price and brand
+2. Ask product for review instead of Ask for review
+3. Show stats of product, accepted reviews and number of user

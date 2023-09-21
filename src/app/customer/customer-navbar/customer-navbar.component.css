@@ -1,0 +1,41 @@
+.navbar {
+  background-color: #333;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+}
+
+.navbar-toggler {
+  border-color: transparent;
+}
+
+.navbar-toggler-icon {
+  background-color: #fff;
+}
+
+.navbar-nav .nav-item .nav-link {
+  color: #fff;
+  font-size: 1.2rem;
+  transition: color 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+  color: #f0f0f0;
+}
+
+.navbar-nav .btn {
+  margin-left: 300px;
+}
+
+.navbar-nav .btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+  font-size: 1rem;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.navbar-nav .btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}

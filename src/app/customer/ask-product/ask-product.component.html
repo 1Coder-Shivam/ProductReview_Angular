@@ -1,0 +1,24 @@
+
+<app-customer-navbar></app-customer-navbar>
+<!-- component.html -->
+<div class="container">
+    <div class="border rounded p-4">
+      <h2 class="text-center mb-4">Ask for Product Review</h2>
+      <form (submit)="openForm()" class="text-center">
+        <div class="form-group">
+          <label for="productCode">Product Code</label>
+          <input type="text" id="productCode" class="form-control" [(ngModel)]="productCode" name="productCode" required>
+        </div>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" class="form-control" [(ngModel)]="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="name">Brand</label>
+          <input type="text" id="name" class="form-control" [(ngModel)]="brand" name="name" required>
+        </div>
+        
+        <button type="submit" class="btn btn-primary btn-block md-3">Submit</button>
+      </form>
+    </div>
+  </div>

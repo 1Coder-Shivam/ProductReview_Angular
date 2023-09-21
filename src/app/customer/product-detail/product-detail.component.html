@@ -1,0 +1,73 @@
+<app-customer-navbar></app-customer-navbar>
+<div id="container" *ngIf="detail">
+    <div id="details" class="row">
+        <div class="col-md-6">
+            <div class="product-image-container fixed-image">
+                <img id="item-image" src="{{detail.image}}" alt="No preview available" class="item-image">
+
+                <div class="post-review">
+                    <h1>Review this product</h1>
+                    <p>Share your thoughts with other customers</p>
+                    <button mat-raised-button (click)="openReviewForm(detail.productCode)"> Write a product review</button>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-6">
+            <div class="product-info-container">
+                <h2 class="product-name">{{detail.name}}</h2>
+                <p class="product-brand">Brand: {{detail.brand}}</p>
+                <p class="product-code">Product Code: {{detail.productCode}}</p>
+                <p class="overall-rating">Overall Rating: {{ calculateOverallRating() }}</p>
+                <p class="product-price">&#8377;{{detail.price | number}}</p>
+                <label for="description"><b> Available Offers</b></label>
+                <ul>
+                    <li>Bank Offer10% Instant Discount on HDFC Bank Credit Card EMI Trxns up to ₹1,000 on orders of
+                        ₹5,000 and aboveT&C</li>
+                    <li>Bank Offer10% Instant Discount on HDFC Bank Debit Card EMI Trxns up to ₹1,000 on orders of
+                        ₹5,000 and aboveT&C</li>
+                    <li>Bank Offer10% Instant Discount on Kotak Bank Credit Card (incl. EMI), up to ₹1000 on orders of
+                        ₹5000 and aboveT&C</li>
+                </ul>
+                <label for="description"><b> Description</b></label>
+                <p class="product-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates
+                    consequatur dignissimos consequuntur ullam officiis. Quaerat repudiandae blanditiis aperiam mollitia
+                    molestias est expedita fugit quis! Omnis laudantium praesentium officiis ab nam!</p>
+                <label for="description"><b> Specification</b></label>
+                <p class="specification">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit, nulla. Rem,
+                    dolore. Atque modi debitis asperiores animi quidem iure libero possimus mollitia? Quis, ipsa placeat
+                    rerum facilis blanditiis dolorem quia inventore! Corporis expedita placeat animi quos! Animi amet
+                    autem blanditiis quod at temporibus similique culpa itaque sapiente ducimus esse error iste illo,
+                    expedita aspernatur beatae doloribus eos odio maxime. Unde optio quas deleniti corporis quidem esse
+                    fugit quo ex doloribus dolorem. Veniam iusto eligendi voluptates voluptate porro fugit voluptatum,
+                    dignissimos, molestias eius placeat fuga quibusdam dolorem vel ad magni similique. Eum nulla ea
+                    sunt. Eius nulla atque voluptatibus similique placeat?</p>
+            </div>
+            <div class="review-section">
+                <h2>Customer Reviews</h2>
+
+                <div class="review-container" *ngFor="let data of detail.reviews">
+                    <div class="review-item">
+                        <div class="review-header">
+                            <img class="user-photo" src="/assets/picture/user.png" height="20px" width="20px"
+                                alt="User Photo">
+                            &nbsp;<span class="username">{{ data.userName }}</span>
+                            <div class="review-info">
+                                <span class="date">Date: {{ data.date }}</span>
+                                <div class="rating">
+                                    <label for="rating"><b>Rating:</b></label>
+                                    <span>&nbsp;&nbsp;{{data.rating}} out of 5</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="headline"><b>{{data.headline}}</b></div>
+                        <div class="review-message">
+                            {{ data.body }}
+                        </div>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+<app-navbar></app-navbar>
+
+<section class="container-fluid image">
+  <section class="row justify-content-center">
+    <section class="col-12 col-sm-6 col-md-4 mt-5">
+      <form ngNativeValiate #loginForm="ngForm" class="form-container" (ngSubmit)="loginUser()">
+        <div class="form-group">
+          <h2 class="text-center font-weight-bold">Login</h2>
+          <small class="text-danger">{{message}}</small>
+          <input type="email" class="form-control" name="email" aria-describeby="emailHelp" placeholder="Enter email"
+            [(ngModel)]='user.emailId' required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" #email="ngModel">
+          <div *ngIf="email.errors && (email.invalid && email.touched)">
+            <small class="text-danger" *ngIf="email.errors?.['required']">Email Id is required field</small>
+            <small class="text-danger" *ngIf="email.errors?.['pattern']">Enter valid value of email</small>
+          </div>
+        </div>
+        <div class="form-group">
+          <input type="password" class="form-control" name="password" placeholder="Password" [(ngModel)]='user.password'
+            required #password="ngModel">
+          <small class="text-danger" [class.d-none]="password.valid || password.untouched">Password is required
+            field</small>
+        </div>
+        <div class="text-center pb-3">
+          <button [disabled]="loginForm.form.invalid" type="submit" class="btn btn-primary">Submit</button>
+        </div>
+        <div class="form-footer mt-3">
+          <p><a routerLink="/registration">Don't have an account?</a></p>
+        </div>
+      </form>
+    </section>
+  </section>
+</section>

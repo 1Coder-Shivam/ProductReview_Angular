@@ -1,0 +1,51 @@
+<app-navbar></app-navbar>
+<div class="image">
+    <div class="signup-form">
+        <form ngNativeValiate #registrationForm="ngForm" (ngSubmit)="userRegistration()">
+            <h2>Register</h2>
+            <small class="text-danger ">{{message}}</small>
+            <div class="form-group">
+
+                <div><input type="text" class="form-control" name="firstName" placeholder="First Name" required
+                        [(ngModel)]="user.firstName" #firstName='ngModel' style="color: black;">
+                    <small class="text-danger" [class.d-none]="firstName.valid || firstName.untouched">required</small>
+                </div>
+                <br>
+                <div><input type="text" class="form-control" name="lastName" placeholder="Last Name" required
+                        [(ngModel)]="user.lastName" #lastName='ngModel' style="color: black;"></div>
+                <small class="text-danger" [class.d-none]="lastName.valid || lastName.untouched">required</small>
+            </div>
+            <div class="form-group">
+                <input type="email" class="form-control" name="email" placeholder="Email" [(ngModel)]='user.emailId'
+                    required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" #email="ngModel" style="color: black;">
+                <div *ngIf="email.errors && (email.invalid && email.touched)">
+                    <small class="text-danger" *ngIf="email.errors?.['required']">Email Id is required field</small>
+                    <small class="text-danger" *ngIf="email.errors?.['pattern']">Enter valid email</small>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input type="password" class="form-control" name="password" placeholder="Password" required
+                    [(ngModel)]='user.password' required #password="ngModel" style="color: black;">
+                <small class="text-danger" [class.d-none]="password.valid || password.untouched">Password is required
+                    field</small>
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" name="confirmPassword" placeholder="Confirm Password"
+                    required (ngModel)='user.password' required #confirmPassword="ngModel" style="color: black;">
+                <small class="text-danger"
+                    [class.d-none]="(confirmPassword.value==password.value)||confirmPassword.untouched">password &
+                    confirmPassword must be same</small>
+            </div>
+
+            <div class="form-group text-center ">
+                <button [disabled]="(registrationForm.form.invalid) || (password.value!=confirmPassword.value)"
+                    type="submit" class="btn btn-success btn-lg btn-block">Register Now</button>
+            </div>
+            <div class="text-center"><a routerLink="/login" style="color: hsl(246, 100%, 50%);">Already have an
+                    account?</a>
+            </div>
+        </form>
+
+    </div>
+</div>

@@ -1,0 +1,50 @@
+.page-container {
+    position: relative;
+  }
+
+  .stats-container {
+    position: absolute;
+    top: 70%;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 35px;
+  }
+
+  .image {
+    background-image: url("../../assets/picture/login2.jpg");
+    background-color: #cccccc;
+    height: 505px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .stat-item {
+    display: flex;
+    align-items: center;
+    margin-right: 40px;
+  }
+
+  .stat-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #3f51b5;
+    border-radius: 50%;
+    color: white;
+    margin-right: 10px;
+  }
+
+  .stat-icon mat-icon {
+    font-size: 24px;
+  }
+
+  .stat-label {
+    font-size: 18px;
+    font-weight: bold;
+  }

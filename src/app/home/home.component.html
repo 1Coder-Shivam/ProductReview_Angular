@@ -1,0 +1,29 @@
+<app-navbar></app-navbar>
+
+<div class="page-container">
+    <div class="stats-container" *ngIf="stats$ | async as stats">
+      <div class="stat-item">
+        <span class="stat-icon">
+          <mat-icon matTooltip="users">person</mat-icon>
+        </span>
+        <span class="stat-label">{{stats.countUsers}}</span>
+      </div>
+  
+      <div class="stat-item">
+        <span class="stat-icon">
+          <mat-icon matTooltip="reviews">reviews</mat-icon>
+        </span>
+        <span class="stat-label">{{stats.countReviews}}</span>
+      </div>
+  
+      <div class="stat-item">
+        <span class="stat-icon">
+          <mat-icon matTooltip="products">book</mat-icon>
+        </span>
+        <span class="stat-label">{{stats.countPosts}}</span>
+      </div>
+    </div>
+  
+    <div class="image"></div>
+  </div>
+

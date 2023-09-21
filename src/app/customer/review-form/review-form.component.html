@@ -1,0 +1,29 @@
+<div mat-dialog-title>
+    <h1>Add a Review to a product</h1>
+</div>
+<form [formGroup]="reviewForm" (ngSubmit)="onFormSubmit()">
+    <div mat-dialog-content class="content">
+        <div class="row">
+            <mat-form-field appearance="outline">
+              <mat-label>Overall Rating</mat-label>
+              <input matInput placeholder="Between 1 to 5" formControlName="rating" type="number" min="0" max="5">
+            </mat-form-field>
+          </div>
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Add a headline</mat-label>
+                <input matInput placeholder="Ex.- 121" formControlName="headline" required>
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Add a written review</mat-label>
+                <input matInput placeholder="Ex.- 121" formControlName="body" required>
+            </mat-form-field>
+        </div>
+        <div mat-dialog-actions class="action">
+            <button mat-raised-button type="button" [mat-dialog-close]="false">Cancel</button>
+            <button mat-raised-button color="primary">Submit</button>
+        </div>
+    </div>
+</form>
